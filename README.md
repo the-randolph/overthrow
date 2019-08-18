@@ -4,13 +4,14 @@
 
 ## Rules
 
-### Role | ### Action | ### Effect | ### Counteraction
-- | Income | + 1 gold | X 
-- | Aid | + 2 gold | X
-- | Overthrow | - 7 gold | X
+Role | Action | Effect | Counteraction
+------------ | ------------- | ------------- |
+**`*`** | Income | + 1 gold | - 
+**`*`** | Aid | + 2 gold | -
+**`*`** | Overthrow | - 7 gold | -
 Baron | Tax | + 3 coins | Aid
-Executioner | Execute | - 3 coins | X
-Diplomat | Exchange | Exchange role for new role | Steal
-Commander | Steal | - 2 from another player | Steal
-Protector | X | X | Execute
+Executioner | Execute | - 3 coins | -
+Diplomat | Exchange | Exchange role for new role | Swipe
+Commander | Swipe | - 2 from another player | Swipe
+Protector | - | - | Execute
 
