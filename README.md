@@ -13,5 +13,5 @@ Baron | Tax | + 3 coins | Aid
 Executioner | Execute | - 3 coins | -
 Diplomat | Exchange | Exchange role for new role | Swipe
 Commander | Swipe | - 2 from another player | Swipe
-Protector | - | - | Execute
+Bodyguard | - | - | Execute
 
