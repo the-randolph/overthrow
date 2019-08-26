@@ -1,8 +1,3 @@
-#include <utility>
+#include "player.h"
 
-class Player {
-private:
-  bool alive;
-  std::pair<int, int> hand;
-  int coin;
-};
+bool Player::isAlive() { return alive; }
