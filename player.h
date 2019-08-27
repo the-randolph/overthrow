@@ -6,7 +6,9 @@ class Player {
   bool alive;
   std::pair<int, int> hand;
   int coin;
-  public bool isAlive();
+
+public:
+  bool isAlive();
 };
 
 #endif

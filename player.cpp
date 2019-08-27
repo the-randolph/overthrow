@@ -1,3 +1,3 @@
 #include "player.h"
 
-public bool Player::isAlive() { return alive; }
+bool Player::isAlive() { return alive; }
