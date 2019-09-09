@@ -1,3 +1,5 @@
+// -*- C++ -*-
+
 #ifndef PLAYER_H
 #define PLAYER_H
 
@@ -16,7 +18,7 @@ inline std::ostream &operator<<(std::ostream &os, card card) {
     break;
   case card::diplomat:
     os << "diplomat";
-        break;
+    break;
   case card::commander:
     os << "commander";
     break;
@@ -30,12 +32,13 @@ inline std::ostream &operator<<(std::ostream &os, card card) {
   return os;
 }
 
-class player {
-  bool alive;
-  std::pair<card, card> hand;
-  int coin;
+using hand = std::pair<card, card>;
 
+class player {
 public:
+  bool alive;
+  hand hand;
+  int coin;
   bool isAlive();
 };
 
