@@ -6,40 +6,50 @@
 #include <ostream>
 #include <utility>
 
-enum class card { baron, executioner, diplomat, commander, bodyguard, empty };
+enum class Card { baron, executioner, diplomat, commander, bodyguard, empty };
 
-inline std::ostream &operator<<(std::ostream &os, card card) {
+inline std::ostream &operator<<(std::ostream &os, Card card) {
   switch (card) {
-  case card::baron:
+  case Card::baron:
     os << "baron";
     break;
-  case card::executioner:
+  case Card::executioner:
     os << "executioner";
     break;
-  case card::diplomat:
+  case Card::diplomat:
     os << "diplomat";
     break;
-  case card::commander:
+  case Card::commander:
     os << "commander";
     break;
-  case card::bodyguard:
+  case Card::bodyguard:
     os << "bodyguard";
     break;
-  case card::empty:
+  case Card::empty:
     os << "empty";
     break;
   }
   return os;
 }
 
-using hand = std::pair<card, card>;
+using Hand = std::pair<Card, Card>;
 
-class player {
-public:
+class Player {
+  friend class gameState;
+
+  std::string name;
   bool alive;
-  hand hand;
+  Hand hand;
   int coin;
-  bool isAlive();
+
+public:
+  Player(std::string userName);
+  bool isAlive() const { return alive; }
+  void setAlive(bool val) { alive = val; }
+  Hand getHand() const { return hand; }
+  void setHand(Hand newHand) { hand = newHand; }
+  int getCoin() const { return coin; }
+  void setCoin(int val) { coin = val; }
 };
 
 #endif

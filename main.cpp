@@ -6,5 +6,5 @@
 #include <vector>
 
 int main(int arc, char *argv[]) {
-  auto state = gameState(2);
-  state.mainLoop();}
+  auto state = gameState({});
+}
