@@ -1,6 +1,7 @@
 #include "gameState.h"
 #include <iostream>
 #include <random>
+#include <algorithm>
 
 gameState::gameState(std::vector<std::unique_ptr<Player>> playerList)
   : players(std::move(playerList)),

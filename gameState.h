@@ -4,6 +4,7 @@
 #define GAME_STATE_H
 
 #include <vector>
+#include <memory>
 #include "player.h"
 #include "humanPlayer.h"
 #include "computerPlayer.h"
