@@ -27,6 +27,7 @@ public:
   // General Actions
   void generalIncome(std::string name);
   void generalAid(std::string name);
+  void removeCard(std::string name, int pos);
   void generalOverthrow(std::string name, std::string target, int pos);
   // Baron (Duke)
   void baronTax(std::string name);
