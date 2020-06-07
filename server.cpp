@@ -15,8 +15,6 @@ std::set<std::string> knownUsers;
 static void broadcast(mg_connection *nc, const std::string &str) {
     for (mg_connection *c = mg_next(nc->mgr, NULL);
          c != NULL; c = mg_next(nc->mgr, c)) {
-        if (c == nc)
-            continue;
         mg_send_websocket_frame(c, WEBSOCKET_OP_TEXT, str.c_str(), str.size());
     }
 }
@@ -46,7 +44,14 @@ static void registerNewUser(mg_connection *nc, const std::string &username) {
 }
 
 static void handleIncomingData(mg_connection *nc, std::string jsonData) {
-    json data = json::parse(jsonData);
+    json data;
+    try {
+        data = json::parse(jsonData);
+    } catch (...) {
+        std::cerr << jsonData << '\n';
+        return;
+    }
+
     auto iter = data.find("action");
     if (iter == data.end() || !iter->is_string())
         return;
@@ -65,7 +70,6 @@ static void eventHandler(mg_connection *nc, int event, void *eventData) {
     switch (event) {
     case MG_EV_WEBSOCKET_HANDSHAKE_DONE: {
         /* New websocket connection. Tell everybody. */
-        // broadcast(nc, mg_mk_str("++ joined"));
         break;
     }
     case MG_EV_WEBSOCKET_FRAME: {
